@@ -1,4 +1,6 @@
 
+import 'package:mochimo_api_client/core/models/TransactionIdentifier.dart';
+
 class TransactionSubmitResponse {
   final TransactionIdentifier transactionIdentifier;
 

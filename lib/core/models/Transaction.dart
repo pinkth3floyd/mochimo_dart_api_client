@@ -1,4 +1,7 @@
 
+import 'package:mochimo_api_client/core/models/Operation.dart';
+import 'package:mochimo_api_client/core/models/TransactionIdentifier.dart';
+
 class Transaction {
   final TransactionIdentifier transactionIdentifier;
   final List<Operation> operations;

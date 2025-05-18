@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 enum LogLevel {
   debug,
   info,
@@ -40,20 +42,20 @@ class Logger {
 
   void debug(String message, [dynamic data]) {
     if (_isDebug) {
-      print(_formatMessage(LogLevel.debug, message, data));
+      debugPrint(_formatMessage(LogLevel.debug, message, data));
     }
   }
 
   void info(String message, [dynamic data]) {
-    print(_formatMessage(LogLevel.info, message, data));
+    debugPrint(_formatMessage(LogLevel.info, message, data));
   }
 
   void warn(String message, [dynamic data]) {
-    print(_formatMessage(LogLevel.warn, message, data));
+    debugPrint(_formatMessage(LogLevel.warn, message, data));
   }
 
   void error(String message, [dynamic error]) {
-    print(_formatMessage(LogLevel.error, message, error));
+    debugPrint(_formatMessage(LogLevel.error, message, error));
   }
 }
 

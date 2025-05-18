@@ -1,3 +1,5 @@
+import 'package:mochimo_api_client/core/models/MempoolTransaction.dart';
+
 class MempoolTransactionResponse {
   final MempoolTransaction transaction;
   final Map<String, dynamic>? metadata;

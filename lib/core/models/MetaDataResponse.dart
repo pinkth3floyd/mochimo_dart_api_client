@@ -1,3 +1,6 @@
+import 'package:mochimo_api_client/core/models/MetaData.dart';
+import 'package:mochimo_api_client/core/models/SuggestedFee.dart';
+
 class MetadataResponse {
   final Metadata metadata;
   final List<SuggestedFee> suggestedFee;

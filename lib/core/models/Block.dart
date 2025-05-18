@@ -1,3 +1,6 @@
+import 'package:mochimo_api_client/core/models/BlockIdentifier.dart';
+import 'package:mochimo_api_client/core/models/Transaction.dart';
+
 class Block {
   final BlockIdentifier blockIdentifier;
   final BlockIdentifier parentBlockIdentifier;

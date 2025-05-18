@@ -1,5 +1,7 @@
 
 
+import 'package:mochimo_api_client/core/models/Currency.dart';
+
 class Amount {
   final String value;
   final Currency currency;

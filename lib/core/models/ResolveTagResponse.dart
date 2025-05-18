@@ -1,3 +1,5 @@
+import 'package:mochimo_api_client/core/models/ResolveTagResult.dart';
+
 class ResolveTagResponse {
   final ResolveTagResult result;
   final bool idempotent;

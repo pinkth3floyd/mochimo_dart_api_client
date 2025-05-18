@@ -1,3 +1,6 @@
+import 'package:mochimo_api_client/core/models/ProcessOptions.dart';
+import 'package:mochimo_api_client/core/models/RequiredPublicKey.dart';
+
 class PreprocessResponse {
   final PreprocessOptions options;
   final List<RequiredPublicKey> requiredPublicKeys;

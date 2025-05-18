@@ -1,4 +1,8 @@
 
+import 'package:mochimo_api_client/core/models/AccountIdentifier.dart';
+import 'package:mochimo_api_client/core/models/Amount.dart';
+import 'package:mochimo_api_client/core/models/OperationIdentifier.dart';
+
 class Operation {
   final OperationIdentifier operationIdentifier;
   final String type;

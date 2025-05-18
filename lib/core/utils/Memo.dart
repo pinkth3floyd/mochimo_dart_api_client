@@ -1,6 +1,8 @@
 import 'dart:typed_data';
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
+
 /**
  * Validates a transaction memo according to MDST reference field rules:
  * - Contains only uppercase [A-Z], digits [0-9], dash [-]
@@ -90,36 +92,36 @@ Uint8List formatMemo(String? memo) {
   if (copyLength < 16) {
     result[copyLength] = 0;
   }
-  print('Result (hex): ${result.map((byte) => byte.toRadixString(16).padLeft(2, '0')).join()}');
-  print('Result (ascii): ${utf8.decode(result.sublist(0, result.indexOf(0)), allowMalformed: true)}');
+  debugPrint('Result (hex): ${result.map((byte) => byte.toRadixString(16).padLeft(2, '0')).join()}');
+  debugPrint('Result (ascii): ${utf8.decode(result.sublist(0, result.indexOf(0)), allowMalformed: true)}');
 
   return result;
 }
 
 void main() {
-  print('isValidMemo tests:');
-  print('"AB-00-EF": ${isValidMemo("AB-00-EF")}');   // true
-  print('"123-CDE-789": ${isValidMemo("123-CDE-789")}'); // true
-  print('"ABC": ${isValidMemo("ABC")}');             // true
-  print('"123": ${isValidMemo("123")}');             // true
-  print('"AB-CD-EF": ${isValidMemo("AB-CD-EF")}');   // false
-  print('"123-456-789": ${isValidMemo("123-456-789")}'); // false
-  print('"ABC-": ${isValidMemo("ABC-")}');           // false
-  print('"-123": ${isValidMemo("-123")}');           // false
-  print('"": ${isValidMemo("")}');                 // true
-  print('null: ${isValidMemo(null)}');               // true
-  print('"A-1-B": ${isValidMemo("A-1-B")}');         // true
-  print('"1-A-2": ${isValidMemo("1-A-2")}');         // true
-  print('"AA-BB": ${isValidMemo("AA-BB")}');       // false
-  print('"11-22": ${isValidMemo("11-22")}');       // false
-  print('"A--B": ${isValidMemo("A--B")}');         // false
+  debugPrint('isValidMemo tests:');
+  debugPrint('"AB-00-EF": ${isValidMemo("AB-00-EF")}');   // true
+  debugPrint('"123-CDE-789": ${isValidMemo("123-CDE-789")}'); // true
+  debugPrint('"ABC": ${isValidMemo("ABC")}');             // true
+  debugPrint('"123": ${isValidMemo("123")}');             // true
+  debugPrint('"AB-CD-EF": ${isValidMemo("AB-CD-EF")}');   // false
+  debugPrint('"123-456-789": ${isValidMemo("123-456-789")}'); // false
+  debugPrint('"ABC-": ${isValidMemo("ABC-")}');           // false
+  debugPrint('"-123": ${isValidMemo("-123")}');           // false
+  debugPrint('"": ${isValidMemo("")}');                 // true
+  debugPrint('null: ${isValidMemo(null)}');               // true
+  debugPrint('"A-1-B": ${isValidMemo("A-1-B")}');         // true
+  debugPrint('"1-A-2": ${isValidMemo("1-A-2")}');         // true
+  debugPrint('"AA-BB": ${isValidMemo("AA-BB")}');       // false
+  debugPrint('"11-22": ${isValidMemo("11-22")}');       // false
+  debugPrint('"A--B": ${isValidMemo("A--B")}');         // false
 
-  print('\nformatMemo tests:');
-  print('"ABC": ${formatMemo("ABC")}');
-  print('"123-DEF": ${formatMemo("123-DEF")}');
-  print('"GHI-45": ${formatMemo("GHI-45")}');
-  print('"LONG-STRING-123": ${formatMemo("LONG-STRING-123")}');
-  print('"": ${formatMemo("")}');
-  print('null: ${formatMemo(null)}');
-  print('"INVALID-MEMO-123": ${formatMemo("INVALID-MEMO-123")}');
+  debugPrint('\nformatMemo tests:');
+  debugPrint('"ABC": ${formatMemo("ABC")}');
+  debugPrint('"123-DEF": ${formatMemo("123-DEF")}');
+  debugPrint('"GHI-45": ${formatMemo("GHI-45")}');
+  debugPrint('"LONG-STRING-123": ${formatMemo("LONG-STRING-123")}');
+  debugPrint('"": ${formatMemo("")}');
+  debugPrint('null: ${formatMemo(null)}');
+  debugPrint('"INVALID-MEMO-123": ${formatMemo("INVALID-MEMO-123")}');
 }

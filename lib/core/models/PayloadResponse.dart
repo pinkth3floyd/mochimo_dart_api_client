@@ -1,3 +1,5 @@
+import 'package:mochimo_api_client/core/models/SigningPayload.dart';
+
 class PayloadsResponse {
   final String unsignedTransaction;
   final List<SigningPayload> payloads;

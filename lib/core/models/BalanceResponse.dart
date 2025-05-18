@@ -1,3 +1,6 @@
+import 'package:mochimo_api_client/core/models/Balance.dart';
+import 'package:mochimo_api_client/core/models/BlockIdentifier.dart';
+
 class BalanceResponse {
   final List<Balance> balances;
   final BlockIdentifier blockIdentifier;

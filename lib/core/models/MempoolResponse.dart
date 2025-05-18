@@ -1,3 +1,5 @@
+import 'package:mochimo_api_client/core/models/TransactionIdentifier.dart';
+
 class MempoolResponse {
   final List<TransactionIdentifier> transactionIdentifiers;
 

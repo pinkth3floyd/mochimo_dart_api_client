@@ -1,21 +1,19 @@
-import 'models/network_identifier.dart';
-import 'models/currency.dart';
-import 'models/operation.dart';
-import 'models/public_key.dart';
-import 'models/resolve_tag_response.dart';
-import 'models/transaction_identifier.dart';
-import 'models/mempool_response.dart';
-import 'models/mempool_transaction_response.dart';
-import 'models/balance_response.dart';
-import 'models/preprocess_response.dart';
-import 'models/metadata_response.dart';
-import 'models/preprocess_options.dart';
-import 'models/payloads_response.dart';
-import 'models/transaction_submit_response.dart';
-import 'models/block_identifier.dart';
-import 'models/block.dart';
-import 'models/network_status.dart';
-import 'utils/logger.dart';
+import 'package:mochimo_api_client/core/models/BalanceResponse.dart';
+import 'package:mochimo_api_client/core/models/Block.dart';
+import 'package:mochimo_api_client/core/models/BlockIdentifier.dart';
+import 'package:mochimo_api_client/core/models/MempoolResponse.dart';
+import 'package:mochimo_api_client/core/models/MempoolTransactionResponse.dart';
+import 'package:mochimo_api_client/core/models/MetaDataResponse.dart';
+import 'package:mochimo_api_client/core/models/NetworkIdentifier.dart';
+import 'package:mochimo_api_client/core/models/NetworkStatus.dart';
+import 'package:mochimo_api_client/core/models/Operation.dart';
+import 'package:mochimo_api_client/core/models/PayloadResponse.dart';
+import 'package:mochimo_api_client/core/models/PreprocessResponse.dart';
+import 'package:mochimo_api_client/core/models/ProcessOptions.dart';
+import 'package:mochimo_api_client/core/models/PublicKey.dart';
+import 'package:mochimo_api_client/core/models/ResolveTagResponse.dart';
+import 'package:mochimo_api_client/core/models/TransactionSubmitResponse.dart';
+import 'package:mochimo_api_client/core/utils/Logger.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
@@ -188,13 +186,13 @@ class MochimoApiClient {
     return BalanceResponse.fromJson(response);
   }
 
-  Future<{ Block block }> getBlock(BlockIdentifier identifier) async {
-    final response = await _makeRequest('/block', {
-      'network_identifier': networkIdentifier.toJson(),
-      'block_identifier': identifier.toJson(),
-    });
-    return {'block': Block.fromJson(response['block'])};
-  }
+//   Future<{ Block block }> getBlock(BlockIdentifier identifier) async {
+//     final response = await _makeRequest('/block', {
+//       'network_identifier': networkIdentifier.toJson(),
+//       'block_identifier': identifier.toJson(),
+//     });
+//     return {'block': Block.fromJson(response['block'])};
+//   }
 
   Future<NetworkStatus> getNetworkStatus() async {
     final response = await _makeRequest('/network/status', {

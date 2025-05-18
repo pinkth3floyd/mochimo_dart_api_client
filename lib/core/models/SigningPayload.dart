@@ -1,3 +1,5 @@
+import 'package:mochimo_api_client/core/models/AccountIdentifier.dart';
+
 class SigningPayload {
   final AccountIdentifier accountIdentifier;
   final String hexBytes;
