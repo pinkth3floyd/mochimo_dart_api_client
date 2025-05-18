@@ -183,13 +183,13 @@ class MochimoApiClient {
     return BalanceResponse.fromJson(response);
   }
 
-//   Future<{ Block block }> getBlock(BlockIdentifier identifier) async {
-//     final response = await _makeRequest('/block', {
-//       'network_identifier': networkIdentifier.toJson(),
-//       'block_identifier': identifier.toJson(),
-//     });
-//     return {'block': Block.fromJson(response['block'])};
-//   }
+  Future<Map<String, Block>> getBlock(BlockIdentifier identifier) async {
+    final response = await _makeRequest('/block', {
+      'network_identifier': networkIdentifier.toJson(),
+      'block_identifier': identifier.toJson(),
+    });
+    return {'block': Block.fromJson(response['block'])};
+  }
 
   Future<NetworkStatus> getNetworkStatus() async {
     final response = await _makeRequest('/network/status', {
