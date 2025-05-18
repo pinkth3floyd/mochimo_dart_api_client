@@ -41,12 +41,9 @@ class MochimoApiClient {
     logger.debug('Construction initialized', {'baseUrl': baseUrl, 'networkIdentifier': networkIdentifier.toJson()});
   }
 
-  Map<String, String> _headersToObject(http.Headers headers) {
-    final result = <String, String>{};
-    headers.forEach((key, values) {
-      result[key] = values.first;
-    });
-    return result;
+  Map<String, String> _headersToObject(Map<String, String> headers) {
+   
+    return Map<String, String>.from(headers);
   }
 
   Future<dynamic> _handleResponse(http.Response response) async {
