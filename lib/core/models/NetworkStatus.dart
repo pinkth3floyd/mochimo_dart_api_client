@@ -1,6 +1,5 @@
 import 'package:mochimo_api_client/core/models/BlockIdentifier.dart';
-import 'package:mochimo_api_client/core/models/Currency.dart';
-import 'package:mochimo_api_client/core/models/NetworkIdentifier.dart';
+
 
 class NetworkStatus {
   final BlockIdentifier currentBlockIdentifier;
@@ -30,18 +29,4 @@ class NetworkStatus {
   }
 }
 
-
-// const Map<String, dynamic> mCMCurrencyJson = {
-//   'symbol': "MCM",
-//   'decimals': 9,
-// };
-
-// const Currency mCMCurrency = Currency.fromJson(mCMCurrencyJson);
-
-// const Map<String, dynamic> networkIdentifierJson = {
-//   'blockchain': "mochimo",
-//   'network': "mainnet",
-// };
-
-// const NetworkIdentifier networkIdentifier = NetworkIdentifier.fromJson(networkIdentifierJson);
 
